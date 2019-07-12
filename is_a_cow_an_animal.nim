@@ -13,10 +13,10 @@ type
         foodType: FoodType  
 
     Animal = ref object of RootObj
-        energy:   int
-        name:     string
-        alive:    bool
-        canEat:   seq[FoodType]
+        energy: int
+        name:   string
+        alive:  bool
+        canEat: seq[FoodType]
 
 
 method eat(this: Animal, food: Food): void {.base.} =
@@ -40,7 +40,7 @@ let
     grass  = Food(energy: 5,  foodType: Grass)
     carrot = Food(energy: 10, foodType: Carrot)
 
-var
+let
     rabbit = Animal(energy: 100,  name: "Rabbit", alive: true, canEat: @[Carrot])
     cow    = Animal(energy: 1000, name: "Cow",    alive: true, canEat: @[Grass])
     human  = Animal(energy: 300,  name: "Hooman", alive: true, canEat: @[Carrot, Meat])
